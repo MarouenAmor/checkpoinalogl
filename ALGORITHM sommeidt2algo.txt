@@ -1,0 +1,35 @@
+ALGORITHM sommeidt2
+VAR
+t1: ARRAY_OF INTEGER[6];
+t2: ARRAY_OF INTEGER[6];
+i,j,s:INTEGER;
+trouve:BOOLEAN;
+BEGIN
+s:=0;
+t1:=[5,8,9,6,2,1];
+t2:=[8,9,3,2,5,4];
+trouve:=false;
+FOR i FROM 0 TO t1.length-1 STEP 1  DO
+FOR j FROM 0 TO t2.length-1 STEP 1  DO
+IF (t1[i]==t2[j]) THEN
+    trouve:=true;
+END_IF
+END_FOR
+IF (true==true) THEN
+    s:=s+t1[i];
+END_IF
+END_FOR
+FOR j FROM 0 TO t2.length-1 STEP 1  DO
+trouve:=false;
+FOR i FROM 0 TO t1.length-1 STEP 1  DO
+IF (t2[j]==t1[i]) THEN
+    trouve:=true;
+END_IF
+END_FOR
+IF (trouve==true) THEN
+    s:=s+t2[j];
+END_IF
+END_FOR
+write(s);
+END
+END
